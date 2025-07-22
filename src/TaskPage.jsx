@@ -1,17 +1,30 @@
-import TaskList from "./TaskList"
+import { useState } from "react";
+import TaskCounter from "./TaskCounter";
+import AddTask from "./AddTaskForm";
+import TaskList from "./TaskList";
 
-const TaskPage = ({isLoggedIn}) => {
+const TaskPage = ({ isLoggedIn }) => {
+  const [taskCount, setTaskCount] = useState(0);
+  const [tasks, setTasks] = useState([]);
 
-    const handleLogOut = () => {
-        isLoggedIn(false);
-    };
+  const addTask = (newTask) => {
+    setTasks([...tasks, newTask]);
+  };
 
-    return(
-        <>
-        <TaskList/>
-        <button onClick={handleLogOut}>Log Out</button>
-        </>
-    );
+  const handleLogOut = () => {
+    isLoggedIn(false);
+  };
+
+  return (
+    <div>
+      <TaskCounter count={taskCount} />
+      <h1>Add Task</h1>
+      <AddTask addOnTask={addTask} />
+      <h1>Your Task List</h1>
+      <TaskList tasks={tasks} setTasks={setTasks} />
+      <button onClick={handleLogOut}>Log Out</button>
+    </div>
+  );
 };
 
 export default TaskPage;

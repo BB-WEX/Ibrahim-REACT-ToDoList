@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "./Inputs";
 
-const Greeting = ({isLoggedIn}) => {
+const Greeting = ({ isLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
