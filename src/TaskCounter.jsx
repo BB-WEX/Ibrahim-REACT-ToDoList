@@ -1,4 +1,6 @@
-const TaskCounter = ({ count }) => {
+const TaskCounter = ({ count, setCount, tasks }) => {
+  setCount(tasks.length);
+
   return (
     <p>
       <b>Total Tasks:</b> {count}
