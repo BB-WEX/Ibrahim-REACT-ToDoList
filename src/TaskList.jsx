@@ -1,12 +1,24 @@
-const TaskList = ({ tasks, setTasks }) => {
+const TaskList = ({ tasks, setTasks, onToggle }) => {
   const handleDeleteTask = (indexDelete) => {
+    // Filter out the deleted task
     setTasks(tasks.filter((_, index) => index !== indexDelete));
   };
 
   const list = tasks.map((task, index) => (
     <li key={index}>
       <div>
-        <strong>Task {index + 1}</strong>: {task.taskTitle} - {task.taskDesc}
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={() => onToggle(index)}
+        />
+        <span
+          style={{ textDecoration: task.completed ? "line-through 3px" : "none" }}
+        >
+          <strong>
+            Task {index + 1}: {task.taskTitle} - {task.taskDesc}
+          </strong>
+        </span>
       </div>
       <button className="delete-btn" onClick={() => handleDeleteTask(index)}>
         Delete

@@ -11,6 +11,13 @@ const TaskPage = ({ isLoggedIn }) => {
     setTasks([...tasks, newTask]);
   };
 
+  const onToggle = (index) => {
+    const updatedTasks = [...tasks];
+    // Allows for checking and unchecking
+    updatedTasks[index].completed = !updatedTasks[index].completed;
+    setTasks(updatedTasks);
+  };
+
   const handleLogOut = () => {
     isLoggedIn(false);
   };
@@ -21,7 +28,7 @@ const TaskPage = ({ isLoggedIn }) => {
       <h1>Add Task</h1>
       <AddTask addOnTask={addTask} />
       <h1>Your Task List</h1>
-      <TaskList tasks={tasks} setTasks={setTasks} />
+      <TaskList onToggle={onToggle} tasks={tasks} setTasks={setTasks} />
       <button onClick={handleLogOut}>Log Out</button>
     </div>
   );

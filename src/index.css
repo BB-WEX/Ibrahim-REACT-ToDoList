@@ -43,6 +43,7 @@ li {
   display: flex;
   justify-content: space-between;
   font-size: large;
+  margin-left: -40px;
   margin-bottom: 10px;
 }
 
