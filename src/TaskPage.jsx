@@ -24,10 +24,10 @@ const TaskPage = ({ isLoggedIn }) => {
 
   return (
     <div>
-      <TaskCounter tasks={tasks} setCount={setTaskCount} count={taskCount} />
-      <h1>Add Task</h1>
+      <h1 style={{ textAlign: "left" }}>Add Task</h1>
       <AddTask addOnTask={addTask} />
-      <h1>Your Task List</h1>
+      <h1 style={{ textAlign: "left" }}>Your Task List</h1>
+      <TaskCounter tasks={tasks} setCount={setTaskCount} count={taskCount} />
       <TaskList onToggle={onToggle} tasks={tasks} setTasks={setTasks} />
       <button onClick={handleLogOut}>Log Out</button>
     </div>

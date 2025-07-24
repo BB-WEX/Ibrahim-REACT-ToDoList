@@ -13,7 +13,7 @@ const TaskList = ({ tasks, setTasks, onToggle }) => {
           onChange={() => onToggle(index)}
         />
         <span
-          style={{ textDecoration: task.completed ? "line-through 3px" : "none" }}
+          style={{ textDecoration: task.completed ? "line-through 3px black" : "none" }}
         >
           <strong>
             Task {index + 1}: {task.taskTitle} - {task.taskDesc}
