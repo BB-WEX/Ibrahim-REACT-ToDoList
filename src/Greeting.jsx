@@ -6,7 +6,7 @@ const Greeting = ({ isLoggedIn }) => {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    if (!username || !password) {
+    if (!username.trim || !password.trim) {
       alert("Enter a suitable username and password");
     } else {
       isLoggedIn(true);
