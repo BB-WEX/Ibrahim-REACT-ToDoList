@@ -6,8 +6,8 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <>
-      <h1>Welcome</h1>
+    <div className="main">
+      <h1>{isLoggedIn ? ("To-Do List") : ("Welcome")}</h1>
       <div>
         {isLoggedIn ? (
           <TaskPage isLoggedIn={setIsLoggedIn} />
@@ -15,7 +15,7 @@ function App() {
           <Greeting isLoggedIn={setIsLoggedIn} />
         )}
       </div>
-    </>
+    </div>
   );
 }
 
