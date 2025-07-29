@@ -25,14 +25,11 @@ const TaskList = ({ tasks, setTasks, onToggle }) => {
 
   const onEdit = (changeIndex, newTaskTitle, newTaskDesc) => {
     const editedTasks = [...tasks];
-    if (!newTaskTitle.trim() || !newTaskDesc.trim()) {
-      alert("invalid entry");
-      setIsEditing(false);
-      return;
+    if (newTaskTitle.trim() && newTaskDesc.trim()) {
+      editedTasks[changeIndex].taskTitle = newTaskTitle;
+      editedTasks[changeIndex].taskDesc = newTaskDesc;
     }
-    editedTasks[changeIndex].taskTitle = newTaskTitle;
-    editedTasks[changeIndex].taskDesc = newTaskDesc;
-    editedTasks[changeIndex].editMode = !editedTasks[changeIndex].editMode;
+    editedTasks[changeIndex].editMode = false;
     setTasks(editedTasks);
     setIsEditing(false);
   };
