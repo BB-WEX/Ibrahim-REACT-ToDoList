@@ -1,6 +1,6 @@
-const Input = ({ text, value, onChange }) => {
+const Input = ({ text, value, onChange, max}) => {
   return (
-    <input type="text" placeholder={text} value={value} onChange={onChange} />
+    <input type="text" placeholder={text} value={value} onChange={onChange} maxLength={max? max : "100"}/>
   );
 };
 
