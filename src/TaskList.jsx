@@ -25,8 +25,10 @@ const TaskList = ({ tasks, setTasks, onToggle }) => {
 
   const onEdit = (changeIndex, newTaskTitle, newTaskDesc) => {
     const editedTasks = [...tasks];
-    if (newTaskTitle.trim() && newTaskDesc.trim()) {
+    if (newTaskTitle.trim()) {
       editedTasks[changeIndex].taskTitle = newTaskTitle;
+    }
+    if (newTaskDesc.trim()) {
       editedTasks[changeIndex].taskDesc = newTaskDesc;
     }
     editedTasks[changeIndex].editMode = false;
