@@ -14,6 +14,7 @@ const AddTask = ({ addOnTask }) => {
       taskTitle,
       taskDesc,
       completed: false,
+      editMode: false,
     };
     addOnTask(newTask);
     setTaskTitle("");
@@ -26,11 +27,13 @@ const AddTask = ({ addOnTask }) => {
         text="Title"
         value={taskTitle}
         onChange={(event) => setTaskTitle(event.target.value)}
+        max={"23"}
       />
       <Input
         text="Description"
         value={taskDesc}
         onChange={(event) => setTaskDesc(event.target.value)}
+        max={"50"}
       />
       <button onClick={handleAddTask}>Add Task</button>
     </div>

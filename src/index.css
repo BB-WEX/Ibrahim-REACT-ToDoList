@@ -35,7 +35,33 @@
 }
 
 
-.delete-btn {
+.task-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 40px;
+  width: 350px;
+  overflow-wrap: anywhere;
+}
+
+.task-layout p :nth-child(1) {
+  font-weight: bold;
+}
+
+.task-layout p :nth-child(3) {
+  font-style: italic;
+}
+
+
+.list-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+}
+
+.delete-btn,
+.edit-btn {
   padding: 0rem 0.3rem;
 }
 
